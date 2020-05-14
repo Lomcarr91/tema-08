@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\t//context menu start\n\tconst {\n\t\tremote\n\t} = require('electron')\n\tconst {\n\t\tMenu,\n\t\tMenuItem\n\t} = remote\n\n\tconst menu = new Menu()\n\tmenu.append(new MenuItem({\n\t\tlabel: 'meny 1',\n\t\tclick() {\n\t\t\tinfo = 'item 1 klikket'\n\t\t}\n\t}))\n\tmenu.append(new MenuItem({\n\t\ttype: 'separator'\n\t}))\n\tmenu.append(new MenuItem({\n\t\tlabel: 'meny 2',\n\t\tclick() {\n\t\t\tinfo = 'item 2 klikket'\n\t\t}\n\t}))\n\n\tconst context = e => {\n\t\te.preventDefault()\n\t\tmenu.popup({\n\t\t\twindow: remote.getCurrentWindow()\n\t\t})\n\t}\n\t//context menu end\n\n\n\tlet info = 'Nothing happening yet'\n\n\tconst showNotification = () => {\n\t\tlet myNotification = new Notification('Hello', {\n\t\t\tbody: 'You are now officialy part of the system OS'\n\t\t})\n\t\tmyNotification.onclick = () => {\n\t\t\tinfo = 'Notification clicked'\n\t\t}\n\t}\n\n\t//alerts start\n\tconst amIOnline = () => {\n\t\twindow.alert(navigator.onLine ? 'you\\'re online sirs' : 'you\\'re offline')\n\t\tinfo = 'Alert accepted'\n\t}\n\tamIOnline.onclick = () => {\n\t\tinfo = 'Alert accepted'\n\t}\n\t//alerts end\n</script>\n\n\n<main>\n\t<hr>\n\t<div class=\"stuff\" on:contextmenu={context}>\n\t\t<h1>Svelte in Electron</h1>\n\t\t<p>{info}</p>\n\n\t\t<button on:click={()=> showNotification() }>Klikk på meg</button>\n\t\t<!--alerts start-->\n\t\t<button on:click={()=> amIOnline () }>Online?</button>\n\t\t<!--alerts end-->\n</main>\n\n\n<style>\n\tmain {\n\t\ttext-align: center;\n\t\tpadding: 1em;\n\t\tmax-width: 240px;\n\t\tmargin: 0 auto;\n\t}\n\n\t.stuff {\n\t\twidth: 100%;\n\t\theight: 200px;\n\t\tbackground-color: slategray;\n\t}\n\n\th1 {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n\n\t@media (min-width: 640px) {\n\t\tmain {\n\t\t\tmax-width: none;\n\t\t}\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AAyEC,IAAI,cAAC,CAAC,AACL,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AACf,CAAC,AAED,MAAM,cAAC,CAAC,AACP,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,KAAK,CACb,gBAAgB,CAAE,SAAS,AAC5B,CAAC,AAED,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACjB,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,IAAI,cAAC,CAAC,AACL,SAAS,CAAE,IAAI,AAChB,CAAC,AACF,CAAC"
+}
