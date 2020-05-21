@@ -22,8 +22,7 @@
       "packagerConfig": {
         "icon": "public/AppIcon.icns"
       },
-      "makers": [
-        {
+      "makers": [{
           "name": "@electron-forge/maker-squirrel",
           "config": {
             "name": "crawler"
@@ -43,7 +42,8 @@
           "name": "@electron-forge/maker-rpm",
           "config": {}
         }
-      ]
+      ],
+
     }
   },
   "dependencies": {
@@ -68,4 +68,3 @@
     "svelte": "^3.19.1"
   }
 }
-
