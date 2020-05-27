@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n\t//Dette er fra det gamle app.svelte dokumentet\n\tconst registrer = {\n\n\t}\n\n\texport let name;\n</script>\n\n\n\n<main>\n\t<h3>Call To Mind</h3>\n\n<img src=\"public/bilder/logo3.svg\" alt=\"\">\n\n\t<div id=\"intro\">\n\t\t<h4>Du har ingen planlagte anrop enda!</h4>\n\t\t<p>Trykk på den det blå krysset i høyre hjørne for å registrere- og planlegge en telefonsamtale</p>\n\t</div>\n\n\t<button>+</button>\n</main>\n\n\n\n\n<style>\n\t@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');\n\n\t:global(body) {\n\t\tbackground: linear-gradient(#F0DAA4, white);\n\t\tfont-family: 'Roboto', sans-serif;\n\t}\n\n\t:global(main) {\n\t\ttext-align: center;\n\t\tpadding: 1em;\n\t\tmax-width: 240px;\n\t\tmargin: 0 auto;\n\t}\n\n\t:global(h3) {\n\t\tcolor: #117893;\n\t}\n\n\t:global(h1) {\n\t\tcolor: #ff3e00;\n\t\ttext-transform: uppercase;\n\t\tfont-size: 4em;\n\t\tfont-weight: 100;\n\t}\n\n\t:global(#intro) {\n\t\tcolor: #117893;\n\t\tmargin: 150px 0px 0px 0px;\n\t}\n\n\t@media (min-width: 640px) {\n\t\tmain {\n\t\t\tmax-width: none;\n\t\t}\n\t}\n</style>"
+  ],
+  "names": [],
+  "mappings": "AA4BC,QAAQ,IAAI,mFAAmF,CAAC,CAAC,AAEzF,IAAI,AAAE,CAAC,AACd,UAAU,CAAE,gBAAgB,OAAO,CAAC,CAAC,KAAK,CAAC,CAC3C,WAAW,CAAE,QAAQ,CAAC,CAAC,UAAU,AAClC,CAAC,AAEO,IAAI,AAAE,CAAC,AACd,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AACf,CAAC,AAEO,EAAE,AAAE,CAAC,AACZ,KAAK,CAAE,OAAO,AACf,CAAC,AAEO,EAAE,AAAE,CAAC,AACZ,KAAK,CAAE,OAAO,CACd,cAAc,CAAE,SAAS,CACzB,SAAS,CAAE,GAAG,CACd,WAAW,CAAE,GAAG,AACjB,CAAC,AAEO,MAAM,AAAE,CAAC,AAChB,KAAK,CAAE,OAAO,CACd,MAAM,CAAE,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,AAC1B,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,IAAI,cAAC,CAAC,AACL,SAAS,CAAE,IAAI,AAChB,CAAC,AACF,CAAC"
+}
