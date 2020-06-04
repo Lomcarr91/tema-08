@@ -346,7 +346,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (52:1) {#if scene == 'frontpage'}
+    // (53:1) {#if scene == 'frontpage'}
     function create_if_block_3(ctx) {
     	let h3;
     	let t1;
@@ -377,14 +377,14 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "+";
     			attr_dev(h3, "class", "svelte-1goykpk");
-    			add_location(h3, file, 52, 2, 833);
+    			add_location(h3, file, 53, 2, 849);
     			if (img.src !== (img_src_value = /*src*/ ctx[5])) attr_dev(img, "src", img_src_value);
     			attr_dev(img, "alt", /*logo*/ ctx[6]);
     			attr_dev(img, "class", "svelte-1goykpk");
-    			add_location(img, file, 53, 4, 859);
+    			add_location(img, file, 54, 3, 874);
     			attr_dev(button, "id", "addTimer");
     			attr_dev(button, "class", "svelte-1goykpk");
-    			add_location(button, file, 69, 2, 1291);
+    			add_location(button, file, 70, 2, 1309);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
@@ -425,14 +425,14 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(52:1) {#if scene == 'frontpage'}",
+    		source: "(53:1) {#if scene == 'frontpage'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (60:2) {:else}
+    // (61:3) {:else}
     function create_else_block(ctx) {
     	let each_1_anchor;
     	let each_value_1 = /*calls*/ ctx[0];
@@ -493,14 +493,14 @@ var app = (function () {
     		block,
     		id: create_else_block.name,
     		type: "else",
-    		source: "(60:2) {:else}",
+    		source: "(61:3) {:else}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (55:2) {#if calls.length == 0}
+    // (56:2) {#if calls.length == 0}
     function create_if_block_4(ctx) {
     	let div;
     	let h4;
@@ -516,12 +516,12 @@ var app = (function () {
     			p = element("p");
     			p.textContent = "Trykk på den det blå krysset i høyre hjørne for å registrere- og planlegge en telefonsamtale";
     			attr_dev(h4, "class", "svelte-1goykpk");
-    			add_location(h4, file, 56, 4, 935);
+    			add_location(h4, file, 57, 4, 952);
     			attr_dev(p, "class", "svelte-1goykpk");
-    			add_location(p, file, 57, 4, 983);
+    			add_location(p, file, 58, 4, 1000);
     			attr_dev(div, "id", "intro");
     			attr_dev(div, "class", "svelte-1goykpk");
-    			add_location(div, file, 55, 3, 914);
+    			add_location(div, file, 56, 3, 931);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -539,14 +539,14 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(55:2) {#if calls.length == 0}",
+    		source: "(56:2) {#if calls.length == 0}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (61:4) {#each calls as call}
+    // (62:4) {#each calls as call}
     function create_each_block_1(ctx) {
     	let div;
     	let h2;
@@ -582,15 +582,15 @@ var app = (function () {
     			t6 = text(t6_value);
     			t7 = space();
     			attr_dev(h2, "class", "svelte-1goykpk");
-    			add_location(h2, file, 62, 6, 1159);
+    			add_location(h2, file, 63, 6, 1177);
     			attr_dev(p0, "class", "svelte-1goykpk");
-    			add_location(p0, file, 63, 6, 1186);
+    			add_location(p0, file, 64, 6, 1204);
     			attr_dev(p1, "class", "svelte-1goykpk");
-    			add_location(p1, file, 64, 6, 1212);
+    			add_location(p1, file, 65, 6, 1230);
     			attr_dev(p2, "class", "svelte-1goykpk");
-    			add_location(p2, file, 65, 6, 1238);
+    			add_location(p2, file, 66, 6, 1256);
     			attr_dev(div, "class", "call svelte-1goykpk");
-    			add_location(div, file, 61, 5, 1134);
+    			add_location(div, file, 62, 5, 1152);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -622,14 +622,14 @@ var app = (function () {
     		block,
     		id: create_each_block_1.name,
     		type: "each",
-    		source: "(61:4) {#each calls as call}",
+    		source: "(62:4) {#each calls as call}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (75:1) {#if scene == 'addcall'}
+    // (76:1) {#if scene == 'addcall'}
     function create_if_block_2(ctx) {
     	let h1;
     	let t1;
@@ -664,7 +664,7 @@ var app = (function () {
     			input3 = element("input");
     			t5 = space();
     			button0 = element("button");
-    			button0.textContent = "Save";
+    			button0.textContent = "Lagre";
     			t7 = space();
     			button1 = element("button");
     			button1.textContent = "Avbryt";
@@ -673,29 +673,29 @@ var app = (function () {
     			button2.textContent = "+";
     			attr_dev(h1, "id", "addCall");
     			attr_dev(h1, "class", "svelte-1goykpk");
-    			add_location(h1, file, 75, 3, 1457);
-    			attr_dev(input0, "placeholder", "name");
+    			add_location(h1, file, 76, 3, 1475);
+    			attr_dev(input0, "placeholder", "navn");
     			attr_dev(input0, "class", "svelte-1goykpk");
-    			add_location(input0, file, 77, 4, 1525);
-    			attr_dev(input1, "placeholder", "phonenumber");
+    			add_location(input0, file, 78, 4, 1543);
+    			attr_dev(input1, "placeholder", "telefonnummer");
     			attr_dev(input1, "class", "svelte-1goykpk");
-    			add_location(input1, file, 78, 4, 1583);
-    			attr_dev(input2, "placeholder", "notes");
+    			add_location(input1, file, 79, 4, 1601);
+    			attr_dev(input2, "placeholder", "notat");
     			attr_dev(input2, "class", "svelte-1goykpk");
-    			add_location(input2, file, 79, 4, 1648);
-    			attr_dev(input3, "placeholder", "hour please");
+    			add_location(input2, file, 80, 4, 1668);
+    			attr_dev(input3, "placeholder", "sett inn hel time");
     			attr_dev(input3, "class", "svelte-1goykpk");
-    			add_location(input3, file, 80, 4, 1707);
+    			add_location(input3, file, 81, 4, 1727);
     			attr_dev(button0, "class", "acButton svelte-1goykpk");
-    			add_location(button0, file, 81, 4, 1771);
+    			add_location(button0, file, 82, 4, 1797);
     			attr_dev(button1, "class", "acButton svelte-1goykpk");
-    			add_location(button1, file, 82, 4, 1833);
+    			add_location(button1, file, 83, 4, 1860);
     			attr_dev(div, "id", "acBox");
     			attr_dev(div, "class", "svelte-1goykpk");
-    			add_location(div, file, 76, 3, 1504);
+    			add_location(div, file, 77, 3, 1522);
     			attr_dev(button2, "id", "addTimer");
     			attr_dev(button2, "class", "svelte-1goykpk");
-    			add_location(button2, file, 84, 3, 1925);
+    			add_location(button2, file, 85, 3, 1952);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -760,14 +760,14 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(75:1) {#if scene == 'addcall'}",
+    		source: "(76:1) {#if scene == 'addcall'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (89:1) {#if scene == 'alarm'}
+    // (90:1) {#if scene == 'alarm'}
     function create_if_block(ctx) {
     	let h1;
     	let t1;
@@ -797,10 +797,10 @@ var app = (function () {
     			button.textContent = "+";
     			attr_dev(h1, "id", "addAlarm");
     			attr_dev(h1, "class", "svelte-1goykpk");
-    			add_location(h1, file, 89, 2, 2095);
+    			add_location(h1, file, 90, 2, 2122);
     			attr_dev(button, "id", "addTimer");
     			attr_dev(button, "class", "svelte-1goykpk");
-    			add_location(button, file, 102, 2, 2491);
+    			add_location(button, file, 103, 2, 2518);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -853,14 +853,14 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(89:1) {#if scene == 'alarm'}",
+    		source: "(90:1) {#if scene == 'alarm'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:3) {#if call.hour == time}
+    // (93:3) {#if call.hour == time}
     function create_if_block_1(ctx) {
     	let div;
     	let h2;
@@ -913,19 +913,19 @@ var app = (function () {
     			button1 = element("button");
     			button1.textContent = "Slumre";
     			attr_dev(h2, "class", "svelte-1goykpk");
-    			add_location(h2, file, 93, 6, 2204);
+    			add_location(h2, file, 94, 6, 2231);
     			attr_dev(p0, "class", "svelte-1goykpk");
-    			add_location(p0, file, 94, 6, 2231);
+    			add_location(p0, file, 95, 6, 2258);
     			attr_dev(p1, "class", "svelte-1goykpk");
-    			add_location(p1, file, 95, 6, 2257);
+    			add_location(p1, file, 96, 6, 2284);
     			attr_dev(p2, "class", "svelte-1goykpk");
-    			add_location(p2, file, 96, 6, 2283);
+    			add_location(p2, file, 97, 6, 2310);
     			attr_dev(button0, "class", "alarmButton svelte-1goykpk");
-    			add_location(button0, file, 97, 6, 2308);
+    			add_location(button0, file, 98, 6, 2335);
     			attr_dev(button1, "class", "alarmButton svelte-1goykpk");
-    			add_location(button1, file, 98, 6, 2386);
+    			add_location(button1, file, 99, 6, 2413);
     			attr_dev(div, "class", "call svelte-1goykpk");
-    			add_location(div, file, 92, 4, 2179);
+    			add_location(div, file, 93, 4, 2206);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -967,14 +967,14 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(92:3) {#if call.hour == time}",
+    		source: "(93:3) {#if call.hour == time}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (91:2) {#each calls as call}
+    // (92:2) {#each calls as call}
     function create_each_block(ctx) {
     	let if_block_anchor;
     	let if_block = /*call*/ ctx[21].hour == /*time*/ ctx[3] && create_if_block_1(ctx);
@@ -1012,7 +1012,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(91:2) {#each calls as call}",
+    		source: "(92:2) {#each calls as call}",
     		ctx
     	});
 
@@ -1036,7 +1036,7 @@ var app = (function () {
     			t1 = space();
     			if (if_block2) if_block2.c();
     			attr_dev(main, "class", "svelte-1goykpk");
-    			add_location(main, file, 49, 0, 795);
+    			add_location(main, file, 50, 0, 811);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1128,6 +1128,7 @@ var app = (function () {
     	let src = "Pics/call.gif"; // 
     	let logo = "Call to Mind";
 
+    	//Alarm-delen
     	const slumre = call => {
     		let index = calls.indexOf(call);
     		console.log(index);

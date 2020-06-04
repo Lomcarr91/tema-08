@@ -2,7 +2,6 @@
 	//debug objekt lagt till
 	let calls = []
 	let newcall = {}
-
 	//scene kan være frontpage | addcall | alarm
 	let scene = 'frontpage'
 
@@ -18,9 +17,11 @@
 
 	$: console.log(calls)
 
-let src = 'Pics/call.gif'; // 
+	let src = 'Pics/call.gif'; // 
 	let logo = 'Call to Mind';
 
+
+	//Alarm-delen
 	const slumre = (call) => {
 		let index = calls.indexOf(call)
 		console.log(index)
@@ -51,13 +52,13 @@ let src = 'Pics/call.gif'; //
 
 	{#if scene == 'frontpage'}
 		<h3>Call To Mind</h3>
-				<img {src} alt="{logo}"> 
+			<img {src} alt="{logo}">		 
 		{#if calls.length == 0}
 			<div id="intro">
 				<h4>Du har ingen planlagte anrop enda!</h4>
 				<p>Trykk på den det blå krysset i høyre hjørne for å registrere- og planlegge en telefonsamtale</p>
 			</div>
-		{:else}
+			{:else}
 			 {#each calls as call}
 			 	<div class="call">
 				 	<h2>{call.name}</h2>
@@ -75,11 +76,11 @@ let src = 'Pics/call.gif'; //
 	{#if scene == 'addcall'}
 			<h1 id="addCall"> Registrer påminnelse</h1>
 			<div id="acBox">
-				<input placeholder='name' bind:value={newcall.name}> 
-				<input placeholder='phonenumber' bind:value={newcall.phone}>
-				<input placeholder='notes' bind:value={newcall.notes}>
-				<input placeholder='hour please' bind:value={newcall.hour}>
-				<button class="acButton" on:click={addCall}>Save</button>
+				<input placeholder='navn' bind:value={newcall.name}> 
+				<input placeholder='telefonnummer' bind:value={newcall.phone}>
+				<input placeholder='notat' bind:value={newcall.notes}>
+				<input placeholder='sett inn hel time' bind:value={newcall.hour}>
+				<button class="acButton" on:click={addCall}>Lagre</button>
 				<button class="acButton" on:click={ () => scene='frontpage' }>Avbryt</button> 
 			</div>
 			<button id="addTimer" on:click={ () => scene='addcall' } >+</button>
