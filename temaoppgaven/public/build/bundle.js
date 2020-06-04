@@ -336,26 +336,21 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[20] = list[i];
     	return child_ctx;
     }
 
     function get_each_context_1(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[21] = list[i];
+    	child_ctx[20] = list[i];
     	return child_ctx;
     }
 
-    // (53:1) {#if scene == 'frontpage'}
+    // (53:1) {#if scene === 'frontpage'}
     function create_if_block_3(ctx) {
     	let h3;
     	let t1;
-    	let img;
-    	let img_src_value;
-    	let t2;
-    	let t3;
-    	let button;
-    	let dispose;
+    	let if_block_anchor;
 
     	function select_block_type(ctx, dirty) {
     		if (/*calls*/ ctx[0].length == 0) return create_if_block_4;
@@ -370,31 +365,16 @@ var app = (function () {
     			h3 = element("h3");
     			h3.textContent = "Call To Mind";
     			t1 = space();
-    			img = element("img");
-    			t2 = space();
     			if_block.c();
-    			t3 = space();
-    			button = element("button");
-    			button.textContent = "+";
-    			attr_dev(h3, "class", "svelte-1goykpk");
-    			add_location(h3, file, 53, 2, 849);
-    			if (img.src !== (img_src_value = /*src*/ ctx[5])) attr_dev(img, "src", img_src_value);
-    			attr_dev(img, "alt", /*logo*/ ctx[6]);
-    			attr_dev(img, "class", "svelte-1goykpk");
-    			add_location(img, file, 54, 3, 874);
-    			attr_dev(button, "id", "addTimer");
-    			attr_dev(button, "class", "svelte-1goykpk");
-    			add_location(button, file, 70, 2, 1309);
+    			if_block_anchor = empty();
+    			attr_dev(h3, "class", "svelte-3ywrqn");
+    			add_location(h3, file, 53, 1, 918);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h3, anchor);
     			insert_dev(target, t1, anchor);
-    			insert_dev(target, img, anchor);
-    			insert_dev(target, t2, anchor);
     			if_block.m(target, anchor);
-    			insert_dev(target, t3, anchor);
-    			insert_dev(target, button, anchor);
-    			dispose = listen_dev(button, "click", /*click_handler*/ ctx[11], false, false, false);
+    			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
     			if (current_block_type === (current_block_type = select_block_type(ctx)) && if_block) {
@@ -405,19 +385,15 @@ var app = (function () {
 
     				if (if_block) {
     					if_block.c();
-    					if_block.m(t3.parentNode, t3);
+    					if_block.m(if_block_anchor.parentNode, if_block_anchor);
     				}
     			}
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t1);
-    			if (detaching) detach_dev(img);
-    			if (detaching) detach_dev(t2);
     			if_block.d(detaching);
-    			if (detaching) detach_dev(t3);
-    			if (detaching) detach_dev(button);
-    			dispose();
+    			if (detaching) detach_dev(if_block_anchor);
     		}
     	};
 
@@ -425,7 +401,7 @@ var app = (function () {
     		block,
     		id: create_if_block_3.name,
     		type: "if",
-    		source: "(53:1) {#if scene == 'frontpage'}",
+    		source: "(53:1) {#if scene === 'frontpage'}",
     		ctx
     	});
 
@@ -459,7 +435,7 @@ var app = (function () {
     			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (dirty & /*calls*/ 1) {
+    			if (dirty & /*callDone, calls*/ 257) {
     				each_value_1 = /*calls*/ ctx[0];
     				validate_each_argument(each_value_1);
     				let i;
@@ -500,37 +476,50 @@ var app = (function () {
     	return block;
     }
 
-    // (56:2) {#if calls.length == 0}
+    // (55:2) {#if calls.length == 0}
     function create_if_block_4(ctx) {
+    	let img;
+    	let img_src_value;
+    	let t0;
     	let div;
     	let h4;
-    	let t1;
+    	let t2;
     	let p;
 
     	const block = {
     		c: function create() {
+    			img = element("img");
+    			t0 = space();
     			div = element("div");
     			h4 = element("h4");
     			h4.textContent = "Du har ingen planlagte anrop enda!";
-    			t1 = space();
+    			t2 = space();
     			p = element("p");
     			p.textContent = "Trykk på den det blå krysset i høyre hjørne for å registrere- og planlegge en telefonsamtale";
-    			attr_dev(h4, "class", "svelte-1goykpk");
-    			add_location(h4, file, 57, 4, 952);
-    			attr_dev(p, "class", "svelte-1goykpk");
-    			add_location(p, file, 58, 4, 1000);
-    			attr_dev(div, "id", "intro");
-    			attr_dev(div, "class", "svelte-1goykpk");
-    			add_location(div, file, 56, 3, 931);
+    			if (img.src !== (img_src_value = /*src*/ ctx[5])) attr_dev(img, "src", img_src_value);
+    			attr_dev(img, "alt", /*logo*/ ctx[6]);
+    			attr_dev(img, "class", "svelte-3ywrqn");
+    			add_location(img, file, 55, 3, 970);
+    			attr_dev(h4, "class", "svelte-3ywrqn");
+    			add_location(h4, file, 57, 4, 1024);
+    			attr_dev(p, "class", "svelte-3ywrqn");
+    			add_location(p, file, 58, 4, 1072);
+    			attr_dev(div, "id", "introTekst");
+    			attr_dev(div, "class", "svelte-3ywrqn");
+    			add_location(div, file, 56, 3, 998);
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, img, anchor);
+    			insert_dev(target, t0, anchor);
     			insert_dev(target, div, anchor);
     			append_dev(div, h4);
-    			append_dev(div, t1);
+    			append_dev(div, t2);
     			append_dev(div, p);
     		},
     		p: noop,
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(img);
+    			if (detaching) detach_dev(t0);
     			if (detaching) detach_dev(div);
     		}
     	};
@@ -539,7 +528,7 @@ var app = (function () {
     		block,
     		id: create_if_block_4.name,
     		type: "if",
-    		source: "(56:2) {#if calls.length == 0}",
+    		source: "(55:2) {#if calls.length == 0}",
     		ctx
     	});
 
@@ -550,21 +539,28 @@ var app = (function () {
     function create_each_block_1(ctx) {
     	let div;
     	let h2;
-    	let t0_value = /*call*/ ctx[21].name + "";
+    	let t0_value = /*call*/ ctx[20].name + "";
     	let t0;
     	let t1;
     	let p0;
-    	let t2_value = /*call*/ ctx[21].phone + "";
+    	let t2_value = /*call*/ ctx[20].phone + "";
     	let t2;
     	let t3;
     	let p1;
-    	let t4_value = /*call*/ ctx[21].notes + "";
+    	let t4_value = /*call*/ ctx[20].notes + "";
     	let t4;
     	let t5;
     	let p2;
-    	let t6_value = /*call*/ ctx[21].hour + "";
+    	let t6_value = /*call*/ ctx[20].hour + "";
     	let t6;
     	let t7;
+    	let button;
+    	let t9;
+    	let dispose;
+
+    	function click_handler(...args) {
+    		return /*click_handler*/ ctx[11](/*call*/ ctx[20], ...args);
+    	}
 
     	const block = {
     		c: function create() {
@@ -581,16 +577,21 @@ var app = (function () {
     			p2 = element("p");
     			t6 = text(t6_value);
     			t7 = space();
-    			attr_dev(h2, "class", "svelte-1goykpk");
-    			add_location(h2, file, 63, 6, 1177);
-    			attr_dev(p0, "class", "svelte-1goykpk");
-    			add_location(p0, file, 64, 6, 1204);
-    			attr_dev(p1, "class", "svelte-1goykpk");
-    			add_location(p1, file, 65, 6, 1230);
-    			attr_dev(p2, "class", "svelte-1goykpk");
-    			add_location(p2, file, 66, 6, 1256);
-    			attr_dev(div, "class", "call svelte-1goykpk");
-    			add_location(div, file, 62, 5, 1152);
+    			button = element("button");
+    			button.textContent = "Slett påminnelse";
+    			t9 = space();
+    			attr_dev(h2, "class", "svelte-3ywrqn");
+    			add_location(h2, file, 63, 6, 1249);
+    			attr_dev(p0, "class", "svelte-3ywrqn");
+    			add_location(p0, file, 64, 6, 1276);
+    			attr_dev(p1, "class", "svelte-3ywrqn");
+    			add_location(p1, file, 65, 6, 1302);
+    			attr_dev(p2, "class", "svelte-3ywrqn");
+    			add_location(p2, file, 66, 6, 1328);
+    			attr_dev(button, "class", "btnDelete svelte-3ywrqn");
+    			add_location(button, file, 67, 6, 1353);
+    			attr_dev(div, "class", "call svelte-3ywrqn");
+    			add_location(div, file, 62, 5, 1224);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -606,15 +607,20 @@ var app = (function () {
     			append_dev(div, p2);
     			append_dev(p2, t6);
     			append_dev(div, t7);
+    			append_dev(div, button);
+    			append_dev(div, t9);
+    			dispose = listen_dev(button, "click", click_handler, false, false, false);
     		},
-    		p: function update(ctx, dirty) {
-    			if (dirty & /*calls*/ 1 && t0_value !== (t0_value = /*call*/ ctx[21].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*calls*/ 1 && t2_value !== (t2_value = /*call*/ ctx[21].phone + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*calls*/ 1 && t4_value !== (t4_value = /*call*/ ctx[21].notes + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*calls*/ 1 && t6_value !== (t6_value = /*call*/ ctx[21].hour + "")) set_data_dev(t6, t6_value);
+    		p: function update(new_ctx, dirty) {
+    			ctx = new_ctx;
+    			if (dirty & /*calls*/ 1 && t0_value !== (t0_value = /*call*/ ctx[20].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*calls*/ 1 && t2_value !== (t2_value = /*call*/ ctx[20].phone + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*calls*/ 1 && t4_value !== (t4_value = /*call*/ ctx[20].notes + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*calls*/ 1 && t6_value !== (t6_value = /*call*/ ctx[20].hour + "")) set_data_dev(t6, t6_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
+    			dispose();
     		}
     	};
 
@@ -629,95 +635,94 @@ var app = (function () {
     	return block;
     }
 
-    // (76:1) {#if scene == 'addcall'}
+    // (77:1) {#if scene == 'addcall'}
     function create_if_block_2(ctx) {
-    	let h1;
+    	let h3;
     	let t1;
+    	let h1;
+    	let t3;
     	let div;
     	let input0;
-    	let t2;
-    	let input1;
-    	let t3;
-    	let input2;
     	let t4;
-    	let input3;
+    	let input1;
     	let t5;
-    	let button0;
+    	let input2;
+    	let t6;
+    	let input3;
     	let t7;
-    	let button1;
+    	let button0;
     	let t9;
-    	let button2;
+    	let button1;
     	let dispose;
 
     	const block = {
     		c: function create() {
+    			h3 = element("h3");
+    			h3.textContent = "Call To Mind";
+    			t1 = space();
     			h1 = element("h1");
     			h1.textContent = "Registrer påminnelse";
-    			t1 = space();
+    			t3 = space();
     			div = element("div");
     			input0 = element("input");
-    			t2 = space();
-    			input1 = element("input");
-    			t3 = space();
-    			input2 = element("input");
     			t4 = space();
-    			input3 = element("input");
+    			input1 = element("input");
     			t5 = space();
+    			input2 = element("input");
+    			t6 = space();
+    			input3 = element("input");
+    			t7 = space();
     			button0 = element("button");
     			button0.textContent = "Lagre";
-    			t7 = space();
+    			t9 = space();
     			button1 = element("button");
     			button1.textContent = "Avbryt";
-    			t9 = space();
-    			button2 = element("button");
-    			button2.textContent = "+";
+    			attr_dev(h3, "class", "svelte-3ywrqn");
+    			add_location(h3, file, 77, 1, 1565);
     			attr_dev(h1, "id", "addCall");
-    			attr_dev(h1, "class", "svelte-1goykpk");
-    			add_location(h1, file, 76, 3, 1475);
+    			attr_dev(h1, "class", "svelte-3ywrqn");
+    			add_location(h1, file, 78, 3, 1591);
     			attr_dev(input0, "placeholder", "navn");
-    			attr_dev(input0, "class", "svelte-1goykpk");
-    			add_location(input0, file, 78, 4, 1543);
+    			attr_dev(input0, "class", "svelte-3ywrqn");
+    			add_location(input0, file, 80, 4, 1659);
     			attr_dev(input1, "placeholder", "telefonnummer");
-    			attr_dev(input1, "class", "svelte-1goykpk");
-    			add_location(input1, file, 79, 4, 1601);
+    			attr_dev(input1, "class", "svelte-3ywrqn");
+    			add_location(input1, file, 81, 4, 1717);
     			attr_dev(input2, "placeholder", "notat");
-    			attr_dev(input2, "class", "svelte-1goykpk");
-    			add_location(input2, file, 80, 4, 1668);
+    			attr_dev(input2, "class", "svelte-3ywrqn");
+    			add_location(input2, file, 82, 4, 1784);
     			attr_dev(input3, "placeholder", "sett inn hel time");
-    			attr_dev(input3, "class", "svelte-1goykpk");
-    			add_location(input3, file, 81, 4, 1727);
-    			attr_dev(button0, "class", "acButton svelte-1goykpk");
-    			add_location(button0, file, 82, 4, 1797);
-    			attr_dev(button1, "class", "acButton svelte-1goykpk");
-    			add_location(button1, file, 83, 4, 1860);
+    			attr_dev(input3, "class", "svelte-3ywrqn");
+    			add_location(input3, file, 83, 4, 1843);
+    			attr_dev(button0, "class", "acButton svelte-3ywrqn");
+    			add_location(button0, file, 84, 4, 1913);
+    			attr_dev(button1, "class", "acButton svelte-3ywrqn");
+    			add_location(button1, file, 85, 4, 1976);
     			attr_dev(div, "id", "acBox");
-    			attr_dev(div, "class", "svelte-1goykpk");
-    			add_location(div, file, 77, 3, 1522);
-    			attr_dev(button2, "id", "addTimer");
-    			attr_dev(button2, "class", "svelte-1goykpk");
-    			add_location(button2, file, 85, 3, 1952);
+    			attr_dev(div, "class", "svelte-3ywrqn");
+    			add_location(div, file, 79, 3, 1638);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, h1, anchor);
+    			insert_dev(target, h3, anchor);
     			insert_dev(target, t1, anchor);
+    			insert_dev(target, h1, anchor);
+    			insert_dev(target, t3, anchor);
     			insert_dev(target, div, anchor);
     			append_dev(div, input0);
     			set_input_value(input0, /*newcall*/ ctx[1].name);
-    			append_dev(div, t2);
+    			append_dev(div, t4);
     			append_dev(div, input1);
     			set_input_value(input1, /*newcall*/ ctx[1].phone);
-    			append_dev(div, t3);
+    			append_dev(div, t5);
     			append_dev(div, input2);
     			set_input_value(input2, /*newcall*/ ctx[1].notes);
-    			append_dev(div, t4);
+    			append_dev(div, t6);
     			append_dev(div, input3);
     			set_input_value(input3, /*newcall*/ ctx[1].hour);
-    			append_dev(div, t5);
-    			append_dev(div, button0);
     			append_dev(div, t7);
+    			append_dev(div, button0);
+    			append_dev(div, t9);
     			append_dev(div, button1);
-    			insert_dev(target, t9, anchor);
-    			insert_dev(target, button2, anchor);
 
     			dispose = [
     				listen_dev(input0, "input", /*input0_input_handler*/ ctx[12]),
@@ -725,8 +730,7 @@ var app = (function () {
     				listen_dev(input2, "input", /*input2_input_handler*/ ctx[14]),
     				listen_dev(input3, "input", /*input3_input_handler*/ ctx[15]),
     				listen_dev(button0, "click", /*addCall*/ ctx[4], false, false, false),
-    				listen_dev(button1, "click", /*click_handler_1*/ ctx[16], false, false, false),
-    				listen_dev(button2, "click", /*click_handler_2*/ ctx[17], false, false, false)
+    				listen_dev(button1, "click", /*click_handler_1*/ ctx[16], false, false, false)
     			];
     		},
     		p: function update(ctx, dirty) {
@@ -747,11 +751,11 @@ var app = (function () {
     			}
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(h1);
+    			if (detaching) detach_dev(h3);
     			if (detaching) detach_dev(t1);
+    			if (detaching) detach_dev(h1);
+    			if (detaching) detach_dev(t3);
     			if (detaching) detach_dev(div);
-    			if (detaching) detach_dev(t9);
-    			if (detaching) detach_dev(button2);
     			run_all(dispose);
     		}
     	};
@@ -760,20 +764,18 @@ var app = (function () {
     		block,
     		id: create_if_block_2.name,
     		type: "if",
-    		source: "(76:1) {#if scene == 'addcall'}",
+    		source: "(77:1) {#if scene == 'addcall'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (90:1) {#if scene == 'alarm'}
+    // (92:1) {#if scene == 'alarm'}
     function create_if_block(ctx) {
     	let h1;
     	let t1;
-    	let t2;
-    	let button;
-    	let dispose;
+    	let each_1_anchor;
     	let each_value = /*calls*/ ctx[0];
     	validate_each_argument(each_value);
     	let each_blocks = [];
@@ -792,15 +794,10 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			t2 = space();
-    			button = element("button");
-    			button.textContent = "+";
+    			each_1_anchor = empty();
     			attr_dev(h1, "id", "addAlarm");
-    			attr_dev(h1, "class", "svelte-1goykpk");
-    			add_location(h1, file, 90, 2, 2122);
-    			attr_dev(button, "id", "addTimer");
-    			attr_dev(button, "class", "svelte-1goykpk");
-    			add_location(button, file, 103, 2, 2518);
+    			attr_dev(h1, "class", "svelte-3ywrqn");
+    			add_location(h1, file, 92, 2, 2170);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -810,9 +807,7 @@ var app = (function () {
     				each_blocks[i].m(target, anchor);
     			}
 
-    			insert_dev(target, t2, anchor);
-    			insert_dev(target, button, anchor);
-    			dispose = listen_dev(button, "click", /*click_handler_5*/ ctx[20], false, false, false);
+    			insert_dev(target, each_1_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
     			if (dirty & /*slumre, calls, callDone, time*/ 393) {
@@ -828,7 +823,7 @@ var app = (function () {
     					} else {
     						each_blocks[i] = create_each_block(child_ctx);
     						each_blocks[i].c();
-    						each_blocks[i].m(t2.parentNode, t2);
+    						each_blocks[i].m(each_1_anchor.parentNode, each_1_anchor);
     					}
     				}
 
@@ -843,9 +838,7 @@ var app = (function () {
     			if (detaching) detach_dev(h1);
     			if (detaching) detach_dev(t1);
     			destroy_each(each_blocks, detaching);
-    			if (detaching) detach_dev(t2);
-    			if (detaching) detach_dev(button);
-    			dispose();
+    			if (detaching) detach_dev(each_1_anchor);
     		}
     	};
 
@@ -853,43 +846,44 @@ var app = (function () {
     		block,
     		id: create_if_block.name,
     		type: "if",
-    		source: "(90:1) {#if scene == 'alarm'}",
+    		source: "(92:1) {#if scene == 'alarm'}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (93:3) {#if call.hour == time}
+    // (95:3) {#if call.hour == time}
     function create_if_block_1(ctx) {
     	let div;
     	let h2;
-    	let t0_value = /*call*/ ctx[21].name + "";
+    	let t0_value = /*call*/ ctx[20].name + "";
     	let t0;
     	let t1;
     	let p0;
-    	let t2_value = /*call*/ ctx[21].phone + "";
+    	let t2_value = /*call*/ ctx[20].phone + "";
     	let t2;
     	let t3;
     	let p1;
-    	let t4_value = /*call*/ ctx[21].notes + "";
+    	let t4_value = /*call*/ ctx[20].notes + "";
     	let t4;
     	let t5;
     	let p2;
-    	let t6_value = /*call*/ ctx[21].hour + "";
+    	let t6_value = /*call*/ ctx[20].hour + "";
     	let t6;
     	let t7;
     	let button0;
     	let t9;
     	let button1;
+    	let t11;
     	let dispose;
 
-    	function click_handler_3(...args) {
-    		return /*click_handler_3*/ ctx[18](/*call*/ ctx[21], ...args);
+    	function click_handler_2(...args) {
+    		return /*click_handler_2*/ ctx[17](/*call*/ ctx[20], ...args);
     	}
 
-    	function click_handler_4(...args) {
-    		return /*click_handler_4*/ ctx[19](/*call*/ ctx[21], ...args);
+    	function click_handler_3(...args) {
+    		return /*click_handler_3*/ ctx[18](/*call*/ ctx[20], ...args);
     	}
 
     	const block = {
@@ -912,20 +906,21 @@ var app = (function () {
     			t9 = space();
     			button1 = element("button");
     			button1.textContent = "Slumre";
-    			attr_dev(h2, "class", "svelte-1goykpk");
-    			add_location(h2, file, 94, 6, 2231);
-    			attr_dev(p0, "class", "svelte-1goykpk");
-    			add_location(p0, file, 95, 6, 2258);
-    			attr_dev(p1, "class", "svelte-1goykpk");
-    			add_location(p1, file, 96, 6, 2284);
-    			attr_dev(p2, "class", "svelte-1goykpk");
-    			add_location(p2, file, 97, 6, 2310);
-    			attr_dev(button0, "class", "alarmButton svelte-1goykpk");
-    			add_location(button0, file, 98, 6, 2335);
-    			attr_dev(button1, "class", "alarmButton svelte-1goykpk");
-    			add_location(button1, file, 99, 6, 2413);
-    			attr_dev(div, "class", "call svelte-1goykpk");
-    			add_location(div, file, 93, 4, 2206);
+    			t11 = space();
+    			attr_dev(h2, "class", "svelte-3ywrqn");
+    			add_location(h2, file, 96, 6, 2279);
+    			attr_dev(p0, "class", "svelte-3ywrqn");
+    			add_location(p0, file, 97, 6, 2306);
+    			attr_dev(p1, "class", "svelte-3ywrqn");
+    			add_location(p1, file, 98, 6, 2332);
+    			attr_dev(p2, "class", "svelte-3ywrqn");
+    			add_location(p2, file, 99, 6, 2358);
+    			attr_dev(button0, "class", "alarmButton svelte-3ywrqn");
+    			add_location(button0, file, 100, 6, 2383);
+    			attr_dev(button1, "class", "alarmButton svelte-3ywrqn");
+    			add_location(button1, file, 101, 6, 2461);
+    			attr_dev(div, "class", "call svelte-3ywrqn");
+    			add_location(div, file, 95, 4, 2254);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -944,18 +939,19 @@ var app = (function () {
     			append_dev(div, button0);
     			append_dev(div, t9);
     			append_dev(div, button1);
+    			append_dev(div, t11);
 
     			dispose = [
-    				listen_dev(button0, "click", click_handler_3, false, false, false),
-    				listen_dev(button1, "click", click_handler_4, false, false, false)
+    				listen_dev(button0, "click", click_handler_2, false, false, false),
+    				listen_dev(button1, "click", click_handler_3, false, false, false)
     			];
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
-    			if (dirty & /*calls*/ 1 && t0_value !== (t0_value = /*call*/ ctx[21].name + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*calls*/ 1 && t2_value !== (t2_value = /*call*/ ctx[21].phone + "")) set_data_dev(t2, t2_value);
-    			if (dirty & /*calls*/ 1 && t4_value !== (t4_value = /*call*/ ctx[21].notes + "")) set_data_dev(t4, t4_value);
-    			if (dirty & /*calls*/ 1 && t6_value !== (t6_value = /*call*/ ctx[21].hour + "")) set_data_dev(t6, t6_value);
+    			if (dirty & /*calls*/ 1 && t0_value !== (t0_value = /*call*/ ctx[20].name + "")) set_data_dev(t0, t0_value);
+    			if (dirty & /*calls*/ 1 && t2_value !== (t2_value = /*call*/ ctx[20].phone + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*calls*/ 1 && t4_value !== (t4_value = /*call*/ ctx[20].notes + "")) set_data_dev(t4, t4_value);
+    			if (dirty & /*calls*/ 1 && t6_value !== (t6_value = /*call*/ ctx[20].hour + "")) set_data_dev(t6, t6_value);
     		},
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(div);
@@ -967,17 +963,17 @@ var app = (function () {
     		block,
     		id: create_if_block_1.name,
     		type: "if",
-    		source: "(93:3) {#if call.hour == time}",
+    		source: "(95:3) {#if call.hour == time}",
     		ctx
     	});
 
     	return block;
     }
 
-    // (92:2) {#each calls as call}
+    // (94:2) {#each calls as call}
     function create_each_block(ctx) {
     	let if_block_anchor;
-    	let if_block = /*call*/ ctx[21].hour == /*time*/ ctx[3] && create_if_block_1(ctx);
+    	let if_block = /*call*/ ctx[20].hour == /*time*/ ctx[3] && create_if_block_1(ctx);
 
     	const block = {
     		c: function create() {
@@ -989,7 +985,7 @@ var app = (function () {
     			insert_dev(target, if_block_anchor, anchor);
     		},
     		p: function update(ctx, dirty) {
-    			if (/*call*/ ctx[21].hour == /*time*/ ctx[3]) {
+    			if (/*call*/ ctx[20].hour == /*time*/ ctx[3]) {
     				if (if_block) {
     					if_block.p(ctx, dirty);
     				} else {
@@ -1012,7 +1008,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(92:2) {#each calls as call}",
+    		source: "(94:2) {#each calls as call}",
     		ctx
     	});
 
@@ -1023,7 +1019,10 @@ var app = (function () {
     	let main;
     	let t0;
     	let t1;
-    	let if_block0 = /*scene*/ ctx[2] == "frontpage" && create_if_block_3(ctx);
+    	let t2;
+    	let button;
+    	let dispose;
+    	let if_block0 = /*scene*/ ctx[2] === "frontpage" && create_if_block_3(ctx);
     	let if_block1 = /*scene*/ ctx[2] == "addcall" && create_if_block_2(ctx);
     	let if_block2 = /*scene*/ ctx[2] == "alarm" && create_if_block(ctx);
 
@@ -1035,7 +1034,13 @@ var app = (function () {
     			if (if_block1) if_block1.c();
     			t1 = space();
     			if (if_block2) if_block2.c();
-    			attr_dev(main, "class", "svelte-1goykpk");
+    			t2 = space();
+    			button = element("button");
+    			button.textContent = "+";
+    			attr_dev(button, "id", "addTimer");
+    			attr_dev(button, "class", "svelte-3ywrqn");
+    			add_location(button, file, 108, 1, 2576);
+    			attr_dev(main, "class", "svelte-3ywrqn");
     			add_location(main, file, 50, 0, 811);
     		},
     		l: function claim(nodes) {
@@ -1048,9 +1053,12 @@ var app = (function () {
     			if (if_block1) if_block1.m(main, null);
     			append_dev(main, t1);
     			if (if_block2) if_block2.m(main, null);
+    			append_dev(main, t2);
+    			append_dev(main, button);
+    			dispose = listen_dev(button, "click", /*click_handler_4*/ ctx[19], false, false, false);
     		},
     		p: function update(ctx, [dirty]) {
-    			if (/*scene*/ ctx[2] == "frontpage") {
+    			if (/*scene*/ ctx[2] === "frontpage") {
     				if (if_block0) {
     					if_block0.p(ctx, dirty);
     				} else {
@@ -1082,7 +1090,7 @@ var app = (function () {
     				} else {
     					if_block2 = create_if_block(ctx);
     					if_block2.c();
-    					if_block2.m(main, null);
+    					if_block2.m(main, t2);
     				}
     			} else if (if_block2) {
     				if_block2.d(1);
@@ -1096,6 +1104,7 @@ var app = (function () {
     			if (if_block0) if_block0.d();
     			if (if_block1) if_block1.d();
     			if (if_block2) if_block2.d();
+    			dispose();
     		}
     	};
 
@@ -1152,7 +1161,7 @@ var app = (function () {
     	};
 
     	setInterval(checkCalls, 1000);
-    	const click_handler = () => $$invalidate(2, scene = "addcall");
+    	const click_handler = call => callDone(call);
 
     	function input0_input_handler() {
     		newcall.name = this.value;
@@ -1175,10 +1184,9 @@ var app = (function () {
     	}
 
     	const click_handler_1 = () => $$invalidate(2, scene = "frontpage");
-    	const click_handler_2 = () => $$invalidate(2, scene = "addcall");
-    	const click_handler_3 = call => callDone(call);
-    	const click_handler_4 = call => slumre(call);
-    	const click_handler_5 = () => $$invalidate(2, scene = "addcall");
+    	const click_handler_2 = call => callDone(call);
+    	const click_handler_3 = call => slumre(call);
+    	const click_handler_4 = () => $$invalidate(2, scene = "addcall");
 
     	$$self.$capture_state = () => ({
     		calls,
@@ -1237,8 +1245,7 @@ var app = (function () {
     		click_handler_1,
     		click_handler_2,
     		click_handler_3,
-    		click_handler_4,
-    		click_handler_5
+    		click_handler_4
     	];
     }
 

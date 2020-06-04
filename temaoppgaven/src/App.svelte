@@ -49,12 +49,12 @@
 
 
 <main>
-
-	{#if scene == 'frontpage'}
-		<h3>Call To Mind</h3>
-			<img {src} alt="{logo}">		 
+<!--Startsiden, og hvor "påminnelsene" blir registrert og lagt evd-->
+	{#if scene === 'frontpage'}
+	<h3>Call To Mind</h3>	
 		{#if calls.length == 0}
-			<div id="intro">
+		 <img {src} alt="{logo}">
+			<div id="introTekst">
 				<h4>Du har ingen planlagte anrop enda!</h4>
 				<p>Trykk på den det blå krysset i høyre hjørne for å registrere- og planlegge en telefonsamtale</p>
 			</div>
@@ -65,15 +65,17 @@
 					 <p>{call.phone}</p>
 					 <p>{call.notes}</p>
 					 <p>{call.hour}</p>
+					 <button class="btnDelete" on:click={()=>callDone(call)}>Slett påminnelse</button>
 				 </div>
 			 {/each}
 		{/if}
-		<button id="addTimer" on:click={ () => scene='addcall' } >+</button>
+		
 	
 	{/if}
 
 	<!--Hvor en skal legge inn informasjon om påminnelsen-->
 	{#if scene == 'addcall'}
+	<h3>Call To Mind</h3>	
 			<h1 id="addCall"> Registrer påminnelse</h1>
 			<div id="acBox">
 				<input placeholder='navn' bind:value={newcall.name}> 
@@ -83,7 +85,7 @@
 				<button class="acButton" on:click={addCall}>Lagre</button>
 				<button class="acButton" on:click={ () => scene='frontpage' }>Avbryt</button> 
 			</div>
-			<button id="addTimer" on:click={ () => scene='addcall' } >+</button>
+			
 	{/if}
 	
 	<!--ferdig alarm som vil ringe hver time fra satt klokkeslett-->
@@ -101,15 +103,25 @@
 				 </div>
 			{/if}
 		{/each}
-		<button id="addTimer" on:click={ () => scene='addcall' } >+</button>
+		
 	{/if}
+
+	<button id="addTimer" on:click={ () => scene='addcall' } >+</button>
 </main>
 
 
 
 
 <style>
+/*Generell styling start*/
 	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+	
+	@media (min-width: 640px) {
+		main {
+			max-width: none;
+			
+		}
+	}
 
 	:global(body) {
 		background: linear-gradient(#117893, white);
@@ -125,25 +137,6 @@
 		margin: 0 auto;
 	}
 
-	img{
-	width: 50vw;
-	margin: 15px 0 0 0;
-	padding: 10px 0 0 0;
-	border: solid;
-	border-radius: 10%;
-	border-width: thin;
-	color: white;
-	}
-
-	#addTimer{
-		background:#117893;
-		color: white;
-		padding:1rem;
-		border-radius: 50%;
-		width: 50px;
-		height: 50px;
-		margin: 60px 0 0 220px;
-	}
 	h3{
 		color: white;
 	}
@@ -154,28 +147,38 @@
 		font-weight: 100;
 	}
 
-	#intro {
+	
+/*Generell styling stop*/
+
+/*Frontpage start*/
+	img{
+	width: 50vw;
+	margin: 15px 0 0 0;
+	padding: 10px 0 0 0;
+	border: solid;
+	border-radius: 10%;
+	border-width: thin;
+	color: white;
+	}
+
+	#introTekst {
 		color: #117893;
 		margin: 80px 0 0 0;
 	}
+/*Frontpage stop*/
+
+/*Addcall start*/
 
 	#acBox{
-		margin: 50px 0 26px 0;
+		margin: 45px 0 0 0;
 		border: 1px transparent;
 		border-radius: 10px;
-		padding: 20px;
+		padding: 20px 20px 9px 20px;
 		text-align: left;
 		background-color: #117893;
 		background-color: hsla(0, 0, 0, 0%)
-	}
-	.acButton{
-		color: #117893;
-		background-color: white;
-		border-radius: 10%;
-		border: 1px transparent;
-		font-weight: bold;
-		margin: 16.5px;
-	}
+	}	
+
 	input{
 		font-size: 15px;
 		background: none;
@@ -189,15 +192,58 @@
 	::placeholder{
 		color: white;
 		opacity: 0.5;
-	}
-
+	}	
+	
 	#addCall{
 		color: white;
 		font-size: 25px;
 	}
+/*Addcall stop*/
+
+/*Alarm starts*/
 	#addAlarm{
 		color: white;
 		font-size: 25px;
+	}
+
+	.call{
+		margin: 20px 0 125px 0;
+		padding: 30px;
+		background-color: #117893;
+		color: white;
+		border-radius: 10%;
+	}
+/*Alarm stops*/
+
+/*Buttons start*/
+
+	#addTimer{
+		position: fixed;
+		background:#117893;
+		color: white;
+		padding:1rem;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		margin: 60px 0 0 100px;
+	}
+
+	.acButton{
+		color: #117893;
+		background-color: white;
+		border-radius: 10%;
+		border: 1px transparent;
+		font-weight: bold;
+		margin: 16.5px;
+	}
+
+	.btnDelete{
+		color: #117893;
+		background-color: white;
+		border-radius: 10%;
+		border: 1px transparent;
+		font-weight: bold;
+		margin: 16.5px;
 	}
 
 	.alarmButton{
@@ -208,18 +254,5 @@
 		font-weight: bold;
 		margin: 20px;
 	}
-
-	.call{
-		margin: 20px 0 0 0;
-		padding: 30px;
-		background-color: #117893;
-		color: white;
-		border-radius: 10%;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+/*Buttons stop*/
 </style>
